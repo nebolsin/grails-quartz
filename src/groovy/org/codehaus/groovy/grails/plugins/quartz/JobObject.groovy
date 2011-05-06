@@ -15,5 +15,6 @@ class JobObject {
     int status
 
     //TODO: add information about fire time (next, last, ...)
-
+    Date triggerPreviousFireTime
+    Date triggerNextFireTime
 }
