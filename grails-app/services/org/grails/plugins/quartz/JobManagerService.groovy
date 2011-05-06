@@ -22,7 +22,9 @@ class JobManagerService {
                     triggers.each {trigger ->
                         currentJob.triggerName = trigger.name
                         currentJob.triggerGroup = trigger.group
-                        currentJob.status = quartzScheduler.getTriggerState(trigger.name, trigger.group)                        
+                        currentJob.status = quartzScheduler.getTriggerState(trigger.name, trigger.group)
+			currentJob.triggerPreviousFireTime = trigger.getPreviousFireTime()
+			currentJob.triggerNextFireTime = trigger.getNextFireTime()
                     }
                 }
                 jobsList.add(currentJob)
